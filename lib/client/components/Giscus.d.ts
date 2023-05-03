@@ -5,10 +5,10 @@ type GiscusRepo = `${string}/${string}`;
 type GiscusMapping = "url" | "title" | "og:title" | "specific" | "number" | "pathname";
 type GiscusInputPosition = "top" | "bottom";
 type GiscusTheme = "light" | "light_high_contrast" | "light_protanopia" | "dark" | "dark_high_contrast" | "dark_protanopia" | "dark_dimmed" | "transparent_dark" | "preferred_color_scheme" | `https://${string}`;
-declare const SUPPORTED_LANGUAGES: readonly ["ar", "de", "gsw", "en", "es", "fa", "fr", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "th", "tr", "uk", "vi", "zh-CN", "zh-TW"];
-type GiscusLang = (typeof SUPPORTED_LANGUAGES)[number];
 
+declare const SUPPORTED_LANGUAGES: readonly ["ar", "de", "gsw", "en", "es", "fa", "fr", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "th", "tr", "uk", "vi", "zh-CN", "zh-TW"];
 type BooleanString = "0" | "1";
+type GiscusLang = (typeof SUPPORTED_LANGUAGES)[number];
 type GiscusLoading = "lazy" | "eager";
 interface GiscusProps {
     id?: string | undefined;
@@ -44,4 +44,4 @@ declare const _default: vue.DefineComponent<{
     darkmode: boolean;
 }, {}>;
 
-export { GiscusLoading, GiscusProps, _default as default };
+export { GiscusLang, GiscusLoading, GiscusProps, SUPPORTED_LANGUAGES, _default as default };

@@ -55,8 +55,6 @@ type GiscusRepo = `${string}/${string}`;
 type GiscusMapping = "url" | "title" | "og:title" | "specific" | "number" | "pathname";
 type GiscusInputPosition = "top" | "bottom";
 type GiscusTheme = "light" | "light_high_contrast" | "light_protanopia" | "dark" | "dark_high_contrast" | "dark_protanopia" | "dark_dimmed" | "transparent_dark" | "preferred_color_scheme" | `https://${string}`;
-declare const SUPPORTED_LANGUAGES: readonly ["ar", "de", "gsw", "en", "es", "fa", "fr", "id", "it", "ja", "ko", "nl", "pl", "pt", "ro", "ru", "th", "tr", "uk", "vi", "zh-CN", "zh-TW"];
-type GiscusLang = (typeof SUPPORTED_LANGUAGES)[number];
 interface GiscusOptions extends BaseCommentOptions {
     provider: "Giscus";
     /**
@@ -147,14 +145,6 @@ interface GiscusOptions extends BaseCommentOptions {
      * @default "dark"
      */
     darkTheme?: GiscusTheme;
-    /**
-     * The language which giscus will be displayed in
-     *
-     * 语言 giscus 将显示在
-     *
-     * @default usePageLang().value
-     */
-    lang?: GiscusLang;
 }
 
 interface DisableCommentOptions extends BaseCommentOptions {
@@ -231,4 +221,4 @@ declare const walineLocales: WalineLocaleConfig;
 /** Comment Plugin */
 declare const commentPlugin: (options: CommentOptions, legacy?: boolean) => PluginFunction;
 
-export { ArtalkOptions, CommentOptions, CommentPluginFrontmatter, GiscusInputPosition, GiscusLang, GiscusMapping, GiscusOptions, GiscusRepo, GiscusTheme, SUPPORTED_LANGUAGES, TwikooInitOptions, TwikooOptions, WalineLocaleConfig, WalineLocaleData, WalineOptions, commentPlugin, walineLocales };
+export { ArtalkOptions, CommentOptions, CommentPluginFrontmatter, GiscusInputPosition, GiscusMapping, GiscusOptions, GiscusRepo, GiscusTheme, TwikooInitOptions, TwikooOptions, WalineLocaleConfig, WalineLocaleData, WalineOptions, commentPlugin, walineLocales };
